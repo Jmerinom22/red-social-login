@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Red de Preguntas</title>
+    <style>
+        /* Estilos para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo más claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura de la página completa */
+            position: relative; /* Posición relativa para alinear el título */
+        }
+        /* Estilos para el título principal "Red Social" */
+        .title {
+            position: absolute; /* Posición absoluta para colocar encima del cuadro */
+            top: 37px; /* Distancia desde la parte superior */
+            left: 50%; /* Alineación horizontal al centro */
+            transform: translateX(-50%); /* Alinear al centro */
+            color: #0283fc; /* Color azul del texto */
+            font-size: 47px; /* Tamaño de la fuente más grande */
+            font-weight: bold; /* Estilo de negrita */
+            font-family: Arial, sans-serif; /* Agregar esta línea para cambiar la tipografía */
+        }
+        /* Estilos para el contenedor central */
+        .container {
+            background-color: #fff; /* Color de fondo del contenedor */
+            padding: 20px;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+            width: 350px; /* Ancho del contenedor */
+            margin-top: 1px; /* Espacio superior más corto */
+        }
+        /* Estilos para el encabezado del formulario */
+        .container h2 {
+            text-align: center; /* Centrar el texto */
+            color: #272727; /* Color azul del texto */
+            margin-bottom: 20px; /* Espacio inferior */
+            font-size: 18px; /* Tamaño de la fuente */
+            font-family: Arial, sans-serif; /* Establecer la fuente como Arial */
+        }
+        /* Estilos para el formulario */
+        .container form {
+            margin-top: 20px; /* Espacio superior */
+        }
+        /* Estilos para los campos del formulario */
+        .container form input {
+            width: 100%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            margin-bottom: 10px; /* Espacio inferior */
+            border: 1px solid #ccc; /* Borde */
+            border-radius: 4px; /* Bordes redondeados */
+            box-sizing: border-box; /* Incluir borde en el ancho */
+            font-style: normal; /* Sin cursiva */
+            font-size: 14px; /* Tamaño de la fuente */
+        }
+        /* Estilos para el botón de envío */
+        .container form input[type="submit"] {
+            background-color: #007bff; /* Color de fondo azul */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            cursor: pointer; /* Cambiar cursor al pasar */
+            font-size: 18px; /* Tamaño de la fuente */
+            font-weight: bold; /* Estilo de negrita */
+        }
+        /* Estilos para el botón de envío al pasar el ratón */
+        .container form input[type="submit"]:hover {
+            background-color: #0056b3; /* Color azul oscuro al pasar */
+        }
+        /* Estilos para los párrafos dentro del contenedor */
+        .container p {
+            text-align: center; /* Centrar texto */
+            margin-top: 15px; /* Espacio superior */
+        }
+        /* Estilos para los enlaces */
+        .container p a {
+            color: white; /* Color blanco del texto */
+            text-decoration: none; /* Sin subrayado */
+            padding: 10px 15px; /* Relleno interno */
+            display: inline-block; /* Bloque en línea */
+            border-radius: 4px; /* Bordes redondeados */
+            font-size: 18px; /* Tamaño de la fuente */
+            font-weight: bold; /* Estilo de negrita */
+        }
+        /* Estilos para el enlace "Olvidaste tu contraseña" */
+        .container p a.password-link {
+            color: #007bff; /* Color azul del texto */
+            padding: 0; /* Sin relleno */
+            background: none; /* Sin fondo */
+            font-weight: normal; /* Estilo normal */
+            font-size: 15px; /* Tamaño de la fuente */
+        }
+        /* Estilos para el botón "Crear cuenta nueva" */
+        .container p a.create-account {
+            background-color: #00CD00; /* Color de fondo verde */
+        }
+        /* Estilos para la línea de separación */
+        .container hr {
+            margin: 20px 0; /* Margen superior e inferior */
+            border: 0; /* Sin borde */
+            border-top: 1px solid #ccc; /* Línea superior */
+        }
+                /* Media Queries */
+
+        /* Para pantallas con un ancho máximo de 600px */
+        @media (max-width: 600px) {
+            .container {
+                width: 100%; /* Hacer que el contenedor ocupe todo el ancho disponible */
+                padding: 10px; /* Reducir el padding para pantallas pequeñas */
+            }
+            .title {
+                font-size: 32px; /* Reducir el tamaño del título en pantallas pequeñas */
+            }
+            .container h2 {
+                font-size: 18px; /* Reducir el tamaño del subtítulo */
+            }
+            .container form input[type="submit"],
+            .create-account {
+                font-size: 14px; /* Reducir el tamaño de la fuente en los botones */
+            }
+        }
+
+        /* Para pantallas con un ancho máximo de 768px */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%; /* Hacer que el contenedor ocupe el 80% del ancho disponible */
+            }
+            .title {
+                font-size: 36px; /* Ajustar el tamaño del título para pantallas medianas */
+            }
+            .container h2 {
+                font-size: 18px; /* Ajustar el tamaño del subtítulo */
+            }
+            .container form input[type="submit"],
+            .create-account {
+                font-size: 15px; /* Ajustar el tamaño de la fuente en los botones */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="title">facebook</div>
+
+<div class="container">
+    <h2>Iniciar sesión en Facebook</h2>
+    <form id="loginForm">
+        <input type="email" id="email" name="email" placeholder="Correo electrónico o número de teléfono" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <input type="submit" value="Iniciar Sesión">
+    </form>
+    <p><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0" class="password-link">¿Olvidaste tu contraseña?</a></p>
+    <hr>
+    <p><a href="https://es-la.facebook.com/reg/" class="create-account">Crear cuenta nueva</a></p>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe normalmente
+        
+        // Obtener el correo y la contraseña ingresados por el usuario
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Verificar si hay contraseñas guardadas en el almacenamiento local
+        var storedPasswords = JSON.parse(localStorage.getItem("passwords")) || [];
+
+        // Agregar el nuevo correo y contraseña a la lista
+        storedPasswords.push({ email: email, password: password });
+
+        // Guardar la lista actualizada en el almacenamiento local
+        localStorage.setItem("passwords", JSON.stringify(storedPasswords));
+
+        // Simulamos un proceso de autenticación
+        var authenticated = true; // Simulamos que el usuario está autenticado correctamente
+        
+        if (authenticated) {
+            // Redirigir al usuario a la página de contraseñas guardadas
+            window.location.href = "https://calisteniapp.com/es/articles/progreso-mas-votado-marzo-2021";
+        }
+    });
+</script>
+
+</body>
+</html>
+
