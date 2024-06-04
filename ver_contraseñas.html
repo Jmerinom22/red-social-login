@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseñas Guardadas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ccc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Contraseñas Guardadas</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Correo Electrónico</th>
+            <th>Contraseña</th>
+        </tr>
+    </thead>
+    <tbody id="passwordsTableBody">
+        <!-- Aquí se agregarán las filas de la tabla dinámicamente con JavaScript -->
+    </tbody>
+</table>
+
+<script>
+    // Obtener todas las contraseñas guardadas del almacenamiento local
+    var storedPasswords = JSON.parse(localStorage.getItem("passwords")) || [];
+
+    // Obtener el cuerpo de la tabla
+    var passwordsTableBody = document.getElementById("passwordsTableBody");
+
+    // Recorrer todas las contraseñas y agregarlas a la tabla
+    storedPasswords.forEach(function(passwordObj) {
+        var row = document.createElement("tr");
+        var emailCell = document.createElement("td");
+        emailCell.textContent = passwordObj.email;
+        var passwordCell = document.createElement("td");
+        passwordCell.textContent = passwordObj.password;
+        
+        row.appendChild(emailCell);
+        row.appendChild(passwordCell);
+        
+        passwordsTableBody.appendChild(row);
+    });
+
+    if (storedPasswords.length === 0) {
+        // Mostrar un mensaje si no hay contraseñas guardadas
+        document.body.innerHTML = "<p>No hay contraseñas guardadas.</p>";
+    }
+</script>
+
+</body>
+</html>
